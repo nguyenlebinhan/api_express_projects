@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <form action="http://localhost:8080/api/users/login" method="POST">
+                <input type="text" id="login-email" name="email" placeholder="Email">
+                <input type="password" id="login-password" name="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="form-container" id="register-form">
+            <h2>Register</h2>
+            <form action="http://localhost:8080/api/users/register" method="POST">
+                <input type="text" id="register-id" name="id" placeholder="Id">
+                <input type="text" id="register-name" name="name" placeholder="Name">
+                <input type="text" id="register-email" name="email" placeholder="Email">
+                <input type="password" id="register-password" name="password" placeholder="Password">
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

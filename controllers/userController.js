@@ -9,14 +9,15 @@ const register = async (req, res) => {
         const hashed = await bcrypt.hash(req.body.password, salt);
         // New User
         let infos = {
-            id:req.body.id,
+            id: req.body.id,
             name: req.body.name,
             email: req.body.email,
             password: hashed,
         };
-        const newUser = await User.create(infos); // Using User.create() for Sequelize
-        res.status(200).json({message:'Register successfully.',newUser});
-        console.log(newUser);
+        const newUser = await User.create(infos);
+        res.status(200).json({message:'Register successfully.'});
+        
+
     } catch (error) {
         res.status(500).send({ error: 'Error saving user' });
         console.error(error);
@@ -35,7 +36,7 @@ const signin = async (req, res) => {
             return res.status(400).send({ message: 'Wrong password.' });
         }
 
-        res.status(200).json({ message: 'Sign-in successful', user });
+        res.status(200).json({ message: 'Sign-in successful'});
     } catch (err) {
         res.status(500).json({ message: 'Unable to sign in' });
         console.error(err);
